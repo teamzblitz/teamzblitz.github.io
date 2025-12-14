@@ -30,6 +30,41 @@
             border-radius: 20px;
             padding: 60px 40px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .language-switcher {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            display: flex;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 8px 12px;
+            border-radius: 25px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .lang-button {
+            background: none;
+            border: none;
+            color: #666;
+            font-size: 0.95rem;
+            cursor: pointer;
+            padding: 5px 12px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .lang-button:hover {
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+        }
+
+        .lang-button.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
         }
 
         h1 {
@@ -106,6 +141,17 @@
                 padding: 40px 25px;
             }
 
+            .language-switcher {
+                top: 20px;
+                right: 20px;
+                padding: 6px 10px;
+            }
+
+            .lang-button {
+                font-size: 0.85rem;
+                padding: 4px 10px;
+            }
+
             h1 {
                 font-size: 2.5rem;
             }
@@ -126,15 +172,20 @@
 </head>
 <body>
     <div class="container">
+        <div class="language-switcher">
+            <button class="lang-button active" onclick="switchLanguage('ja')">日本語</button>
+            <button class="lang-button" onclick="switchLanguage('en')">English</button>
+        </div>
+
         <h1>teamzblitz</h1>
-        <p class="subtitle">革新的なプロダクトを開発するデベロッパーチーム</p>
+        <p class="subtitle" data-ja="革新的なプロダクトを開発するデベロッパーチーム" data-en="Developer team creating innovative products">革新的なプロダクトを開発するデベロッパーチーム</p>
 
         <div class="products">
-            <h2>プロダクト</h2>
+            <h2 data-ja="プロダクト" data-en="Products">プロダクト</h2>
 
             <a href="/satorino/" class="product-card">
-                <h3>satorino</h3>
-                <p>次世代のプロダクト体験を提供します</p>
+                <h3>Satorino</h3>
+                <p data-ja="次世代のプロダクト体験を提供します" data-en="Providing next-generation product experience">次世代のプロダクト体験を提供します</p>
             </a>
         </div>
 
@@ -142,5 +193,36 @@
             <p>&copy; 2024 teamzblitz. All rights reserved.</p>
         </div>
     </div>
+
+    <script>
+        // Check if language preference is stored
+        const savedLang = localStorage.getItem('preferredLanguage') || 'ja';
+        if (savedLang === 'en') {
+            switchLanguage('en');
+        }
+
+        function switchLanguage(lang) {
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+
+            // Update all elements with data-ja and data-en attributes
+            document.querySelectorAll('[data-ja][data-en]').forEach(element => {
+                if (lang === 'ja') {
+                    element.textContent = element.getAttribute('data-ja');
+                } else {
+                    element.textContent = element.getAttribute('data-en');
+                }
+            });
+
+            // Update active button state
+            document.querySelectorAll('.lang-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+    </script>
 </body>
 </html>

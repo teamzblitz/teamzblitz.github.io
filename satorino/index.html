@@ -38,6 +38,41 @@
             content: "← ";
         }
 
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 8px 12px;
+            border-radius: 25px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        .lang-button {
+            background: none;
+            border: none;
+            color: #666;
+            font-size: 0.95rem;
+            cursor: pointer;
+            padding: 5px 12px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .lang-button:hover {
+            background: rgba(255, 107, 74, 0.1);
+            color: #FF6B4A;
+        }
+
+        .lang-button.active {
+            background: #FF6B4A;
+            color: white;
+        }
+
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -308,6 +343,17 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .language-switcher {
+                top: 15px;
+                right: 15px;
+                padding: 6px 10px;
+            }
+
+            .lang-button {
+                font-size: 0.85rem;
+                padding: 4px 10px;
+            }
+
             .logo {
                 font-size: 2.8rem;
             }
@@ -366,65 +412,70 @@
     </style>
 </head>
 <body>
-    <a href="/" class="back-link">teamzblitzに戻る</a>
+    <a href="/" class="back-link" data-ja="teamzblitzに戻る" data-en="Back to teamzblitz">teamzblitzに戻る</a>
+
+    <div class="language-switcher">
+        <button class="lang-button active" onclick="switchLanguage('ja')">日本語</button>
+        <button class="lang-button" onclick="switchLanguage('en')">English</button>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1 class="logo">Satorino</h1>
-            <p class="hero-tagline">25分の集中が、小さな悟りになる</p>
-            <p class="hero-description">
+            <p class="hero-tagline" data-ja="25分の集中が、小さな悟りになる" data-en="25 minutes of focus becomes a small enlightenment">25分の集中が、小さな悟りになる</p>
+            <p class="hero-description" data-ja="集中できたか、できなかったか。それに気づくことが「悟り」です。" data-en="Whether you could focus or not. Noticing that is 'enlightenment'.">
                 集中できたか、できなかったか。<br>
                 それに気づくことが「悟り」です。
             </p>
-            <a href="#download" class="cta-button">無料でダウンロード</a>
+            <a href="#download" class="cta-button" data-ja="無料でダウンロード" data-en="Download for Free">無料でダウンロード</a>
         </div>
     </section>
 
     <!-- Concept Section -->
     <section class="section concept">
-        <h2 class="section-title">コンセプト</h2>
-        <div class="concept-text">
+        <h2 class="section-title" data-ja="コンセプト" data-en="Concept">コンセプト</h2>
+        <div class="concept-text" data-ja="日々の仕事や勉強で、私たちは「完璧な集中」を求めがちです。でも現実には、集中できる日もあれば、気が散ってしまう日もある。" data-en="In our daily work and study, we tend to seek 'perfect focus'. But in reality, some days we can concentrate, and some days we get distracted.">
             日々の仕事や勉強で、私たちは「完璧な集中」を求めがちです。でも現実には、集中できる日もあれば、気が散ってしまう日もある。
         </div>
         <div class="concept-text">
-            <span class="concept-highlight">Satorinoは、そのありのままを受け入れます。</span>
+            <span class="concept-highlight" data-ja="Satorinoは、そのありのままを受け入れます。" data-en="Satorino accepts you as you are.">Satorinoは、そのありのままを受け入れます。</span>
         </div>
-        <div class="concept-text">
+        <div class="concept-text" data-ja="25分のセッションが終わったら、自分に問いかける。「今、どれくらい集中できた？」。その答えに正解も不正解もありません。ただ気づくこと、それ自体が小さな「悟り」です。" data-en="After a 25-minute session, ask yourself: 'How well could I focus?' There's no right or wrong answer. Simply noticing is itself a small 'enlightenment'.">
             25分のセッションが終わったら、自分に問いかける。「今、どれくらい集中できた？」。その答えに正解も不正解もありません。ただ気づくこと、それ自体が小さな「悟り」です。
         </div>
     </section>
 
     <!-- Journey Timeline -->
     <section class="section journey">
-        <h2 class="section-title">Satorinoとの日々</h2>
-        <p class="section-subtitle">使い続けることで、自分自身への理解が深まります</p>
+        <h2 class="section-title" data-ja="Satorinoとの日々" data-en="Your Journey with Satorino">Satorinoとの日々</h2>
+        <p class="section-subtitle" data-ja="使い続けることで、自分自身への理解が深まります" data-en="As you continue using it, you'll deepen your understanding of yourself">使い続けることで、自分自身への理解が深まります</p>
 
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-label">DAY 1</div>
-                <div class="timeline-content">
+                <div class="timeline-content" data-ja="初めてのセッション。25分後、「集中度どうだった？」と聞かれる。正直に「40%くらいかな」と記録。それでいい。気づけたことが最初の悟り。" data-en="Your first session. After 25 minutes, you're asked 'How was your focus?' You honestly record '40% maybe'. That's perfectly fine. Noticing this is your first enlightenment.">
                     初めてのセッション。25分後、「集中度どうだった？」と聞かれる。正直に「40%くらいかな」と記録。それでいい。<strong>気づけたことが最初の悟り</strong>。
                 </div>
             </div>
 
             <div class="timeline-item">
                 <div class="timeline-label">WEEK 1</div>
-                <div class="timeline-content">
+                <div class="timeline-content" data-ja="何度かセッションを重ねるうちに、自分のパターンが見えてくる。午前中は集中しやすい、昼食後は難しい。これも悟り。" data-en="After several sessions, your patterns become visible. You focus better in the morning, struggle after lunch. This too is enlightenment.">
                     何度かセッションを重ねるうちに、自分のパターンが見えてくる。午前中は集中しやすい、昼食後は難しい。<strong>これも悟り</strong>。
                 </div>
             </div>
 
             <div class="timeline-item">
                 <div class="timeline-label">MONTH 1</div>
-                <div class="timeline-content">
+                <div class="timeline-content" data-ja="ログを振り返ると、小さな悟りが積み重なっている。数字の上下に一喜一憂するのではなく、「自分はこういう人間なんだな」と理解が深まる。" data-en="Looking back at your logs, small enlightenments have accumulated. Rather than being swayed by numbers going up and down, your understanding deepens: 'This is who I am'.">
                     ログを振り返ると、小さな悟りが積み重なっている。数字の上下に一喜一憂するのではなく、「自分はこういう人間なんだな」と<strong>理解が深まる</strong>。
                 </div>
             </div>
 
             <div class="timeline-item">
-                <div class="timeline-label">その先</div>
-                <div class="timeline-content">
+                <div class="timeline-label" data-ja="その先" data-en="Beyond">その先</div>
+                <div class="timeline-content" data-ja="Satorinoは生産性を爆上げするツールではありません。自分自身への解像度を上げるツールです。小さな悟りの積み重ねが、やがて大きな自己理解になる。" data-en="Satorino isn't a tool to skyrocket your productivity. It's a tool to increase your self-resolution. Small enlightenments accumulate into deep self-understanding.">
                     Satorinoは生産性を爆上げするツールではありません。<strong>自分自身への解像度を上げるツール</strong>です。小さな悟りの積み重ねが、やがて大きな自己理解になる。
                 </div>
             </div>
@@ -433,52 +484,52 @@
 
     <!-- Features Section -->
     <section class="section features">
-        <h2 class="section-title">主な機能</h2>
+        <h2 class="section-title" data-ja="主な機能" data-en="Key Features">主な機能</h2>
 
         <div class="features-grid">
             <div class="feature-item">
                 <div class="feature-icon">⏱️</div>
-                <h3 class="feature-title">ポモドーロタイマー</h3>
-                <p class="feature-description">25分 / 5分のシンプルなタイマー。ひとつのことに集中します。</p>
+                <h3 class="feature-title" data-ja="ポモドーロタイマー" data-en="Pomodoro Timer">ポモドーロタイマー</h3>
+                <p class="feature-description" data-ja="25分 / 5分のシンプルなタイマー。ひとつのことに集中します。" data-en="Simple 25/5 minute timer. Focus on one thing at a time.">25分 / 5分のシンプルなタイマー。ひとつのことに集中します。</p>
             </div>
 
             <div class="feature-item">
                 <div class="feature-icon">💭</div>
-                <h3 class="feature-title">ふりかえり</h3>
-                <p class="feature-description">セッション後に「どれくらい集中できた？」と問いかけます。正直に記録するだけ。</p>
+                <h3 class="feature-title" data-ja="ふりかえり" data-en="Reflection">ふりかえり</h3>
+                <p class="feature-description" data-ja="セッション後に「どれくらい集中できた？」と問いかけます。正直に記録するだけ。" data-en="After each session: 'How well could you focus?' Just record honestly.">セッション後に「どれくらい集中できた？」と問いかけます。正直に記録するだけ。</p>
             </div>
 
             <div class="feature-item">
                 <div class="feature-icon">📊</div>
-                <h3 class="feature-title">可視化</h3>
-                <p class="feature-description">日別・週別のふりかえり機能で、自分の集中パターンを発見できます。</p>
+                <h3 class="feature-title" data-ja="可視化" data-en="Visualization">可視化</h3>
+                <p class="feature-description" data-ja="日別・週別のふりかえり機能で、自分の集中パターンを発見できます。" data-en="Daily and weekly reflections help you discover your focus patterns.">日別・週別のふりかえり機能で、自分の集中パターンを発見できます。</p>
             </div>
 
             <div class="feature-item">
                 <div class="feature-icon">🌱</div>
-                <h3 class="feature-title">悟りの積み重ね</h3>
-                <p class="feature-description">小さな気づきを積み重ねて、自分らしい集中のかたちを見つけていきます。</p>
+                <h3 class="feature-title" data-ja="悟りの積み重ね" data-en="Accumulating Enlightenment">悟りの積み重ね</h3>
+                <p class="feature-description" data-ja="小さな気づきを積み重ねて、自分らしい集中のかたちを見つけていきます。" data-en="Accumulate small insights to find your own way of focusing.">小さな気づきを積み重ねて、自分らしい集中のかたちを見つけていきます。</p>
             </div>
         </div>
     </section>
 
     <!-- Philosophy Section -->
     <section class="section philosophy">
-        <h2 class="section-title">Satorinoの哲学</h2>
+        <h2 class="section-title" data-ja="Satorinoの哲学" data-en="Satorino's Philosophy">Satorinoの哲学</h2>
         <p class="philosophy-text">
-            <span class="philosophy-emphasis">完璧を目指さなくていい。</span><br>
-            続けることで、自分の集中パターンが見えてきます。
+            <span class="philosophy-emphasis" data-ja="完璧を目指さなくていい。" data-en="You don't need to be perfect.">完璧を目指さなくていい。</span><br>
+            <span data-ja="続けることで、自分の集中パターンが見えてきます。" data-en="Keep going, and your focus patterns will emerge.">続けることで、自分の集中パターンが見えてきます。</span>
         </p>
         <p class="philosophy-text">
-            Satorinoは生産性を無理に上げるツールではありません。<br>
-            <span class="philosophy-emphasis">自分自身を理解するためのツール</span>です。
+            <span data-ja="Satorinoは生産性を無理に上げるツールではありません。" data-en="Satorino isn't about forcing productivity.">Satorinoは生産性を無理に上げるツールではありません。</span><br>
+            <span class="philosophy-emphasis" data-ja="自分自身を理解するためのツール" data-en="It's a tool for understanding yourself">自分自身を理解するためのツール</span><span data-ja="です。" data-en=".">です。</span>
         </p>
     </section>
 
     <!-- App Store Section -->
     <section class="section app-store" id="download">
-        <h2 class="section-title">ダウンロード</h2>
-        <p class="store-description">
+        <h2 class="section-title" data-ja="ダウンロード" data-en="Download">ダウンロード</h2>
+        <p class="store-description" data-ja="25分の集中を、小さな悟りに。集中度を記録して自分を知るポモドーロタイマー。" data-en="Turn 25 minutes of focus into small enlightenment. A Pomodoro timer to know yourself through tracking your focus.">
             25分の集中を、小さな悟りに。<br>
             集中度を記録して自分を知るポモドーロタイマー。
         </p>
@@ -499,8 +550,73 @@
     <footer class="footer">
         <p>&copy; 2024 teamzblitz. All rights reserved.</p>
         <p style="margin-top: 10px;">
-            <a href="/">teamzblitzに戻る</a>
+            <a href="/" data-ja="teamzblitzに戻る" data-en="Back to teamzblitz">teamzblitzに戻る</a>
         </p>
     </footer>
+
+    <script>
+        // Check if language preference is stored
+        const savedLang = localStorage.getItem('preferredLanguage') || 'ja';
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            if (savedLang === 'en') {
+                switchLanguage('en', true);
+            }
+        });
+
+        function switchLanguage(lang, skipEvent = false) {
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+
+            // Update all elements with data-ja and data-en attributes
+            document.querySelectorAll('[data-ja][data-en]').forEach(element => {
+                if (lang === 'ja') {
+                    const jaText = element.getAttribute('data-ja');
+                    if (element.innerHTML.includes('<br>')) {
+                        element.innerHTML = jaText.replace(/\n/g, '<br>');
+                    } else if (element.innerHTML.includes('<strong>') || element.innerHTML.includes('<span>')) {
+                        // For complex HTML, try to preserve structure
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = jaText;
+                        if (tempDiv.querySelector('strong, span')) {
+                            element.innerHTML = jaText;
+                        } else {
+                            element.textContent = jaText;
+                        }
+                    } else {
+                        element.textContent = jaText;
+                    }
+                } else {
+                    const enText = element.getAttribute('data-en');
+                    if (element.innerHTML.includes('<br>')) {
+                        element.innerHTML = enText.replace(/\n/g, '<br>');
+                    } else if (element.innerHTML.includes('<strong>') || element.innerHTML.includes('<span>')) {
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = enText;
+                        if (tempDiv.querySelector('strong, span')) {
+                            element.innerHTML = enText;
+                        } else {
+                            element.textContent = enText;
+                        }
+                    } else {
+                        element.textContent = enText;
+                    }
+                }
+            });
+
+            // Update active button state
+            document.querySelectorAll('.lang-button').forEach(button => {
+                button.classList.remove('active');
+                if ((lang === 'ja' && button.textContent === '日本語') ||
+                    (lang === 'en' && button.textContent === 'English')) {
+                    button.classList.add('active');
+                }
+            });
+
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+    </script>
 </body>
 </html>
