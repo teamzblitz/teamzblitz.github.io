@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>satorino - teamzblitz</title>
+    <meta name="description" content="25分の集中を、小さな悟りに。集中度を記録して自分を知るポモドーロタイマー。">
+    <title>Satorino - 25分の集中が、小さな悟りになる</title>
     <style>
         * {
             margin: 0;
@@ -12,224 +13,494 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+            line-height: 1.8;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 60px 40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            background: #fafafa;
         }
 
         .back-link {
-            display: inline-block;
-            margin-bottom: 30px;
-            color: #667eea;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            color: #666;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: color 0.3s ease;
+            z-index: 100;
         }
 
         .back-link:hover {
-            color: #764ba2;
+            color: #FF6B4A;
         }
 
         .back-link::before {
             content: "← ";
         }
 
-        h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .tagline {
-            font-size: 1.5rem;
-            color: #666;
-            margin-bottom: 50px;
-        }
-
-        .section {
-            margin-bottom: 50px;
-        }
-
-        .section h2 {
-            font-size: 2rem;
-            color: #333;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #667eea;
-        }
-
-        .section p {
-            font-size: 1.1rem;
-            color: #555;
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .feature-card {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-            border-radius: 15px;
-            padding: 25px;
-            border: 2px solid rgba(102, 126, 234, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
-        }
-
-        .feature-card h3 {
-            font-size: 1.4rem;
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-
-        .feature-card p {
-            font-size: 1rem;
-            color: #666;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 15px;
-            padding: 40px;
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .cta-section h2 {
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to bottom, #1a1a1a 0%, #2d2d2d 100%);
             color: white;
-            border: none;
-            margin-bottom: 20px;
+            text-align: center;
+            padding: 80px 20px 60px;
         }
 
-        .cta-section p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.2rem;
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .logo {
+            font-size: 4rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
             margin-bottom: 30px;
+        }
+
+        .hero-tagline {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: #FF6B4A;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 50px;
+            line-height: 1.8;
         }
 
         .cta-button {
             display: inline-block;
-            background: white;
-            color: #667eea;
-            padding: 15px 40px;
+            background: #FF6B4A;
+            color: white;
+            padding: 18px 50px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 74, 0.3);
         }
 
         .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+            background: #FF5533;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 74, 0.4);
         }
 
-        .footer {
-            margin-top: 60px;
+        /* Content Sections */
+        .section {
+            padding: 100px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 50px;
             text-align: center;
+            color: #1a1a1a;
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            text-align: center;
+            margin-bottom: 60px;
+            line-height: 1.8;
+        }
+
+        /* Concept Section */
+        .concept {
+            background: white;
+        }
+
+        .concept-text {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 2;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .concept-highlight {
+            background: linear-gradient(transparent 60%, rgba(255, 107, 74, 0.2) 60%);
+            font-weight: 600;
+        }
+
+        /* Journey Timeline */
+        .journey {
+            background: #f5f5f5;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-left: 5px solid #FF6B4A;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+        }
+
+        .timeline-label {
+            font-size: 1rem;
+            color: #FF6B4A;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 0.1em;
+        }
+
+        .timeline-content {
+            font-size: 1.15rem;
+            color: #555;
+            line-height: 1.9;
+        }
+
+        /* Features Section */
+        .features {
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 40px 30px;
+            background: #fafafa;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            background: #f0f0f0;
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .feature-description {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Philosophy Section */
+        .philosophy {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+        }
+
+        .philosophy .section-title {
+            color: white;
+        }
+
+        .philosophy-text {
+            font-size: 1.5rem;
+            line-height: 2;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+        }
+
+        .philosophy-emphasis {
+            color: #FF6B4A;
+            font-weight: 600;
+        }
+
+        /* App Store Section */
+        .app-store {
+            background: white;
+            text-align: center;
+        }
+
+        .store-description {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            line-height: 1.9;
+        }
+
+        .store-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .store-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 35px;
+            background: #1a1a1a;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .store-button:hover {
+            background: #2d2d2d;
+            transform: translateY(-2px);
+        }
+
+        .store-button-icon {
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
             color: #999;
+            text-align: center;
+            padding: 40px 20px;
             font-size: 0.9rem;
         }
 
+        .footer a {
+            color: #FF6B4A;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .container {
-                padding: 40px 25px;
+            .logo {
+                font-size: 2.8rem;
             }
 
-            h1 {
-                font-size: 2.5rem;
+            .hero-tagline {
+                font-size: 1.4rem;
             }
 
-            .tagline {
+            .hero-description {
+                font-size: 1.1rem;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .concept-text {
+                font-size: 1.05rem;
+            }
+
+            .timeline-item {
+                padding: 30px 25px;
+            }
+
+            .timeline-content {
+                font-size: 1.05rem;
+            }
+
+            .philosophy-text {
                 font-size: 1.2rem;
             }
 
-            .section h2 {
-                font-size: 1.6rem;
+            .features-grid {
+                grid-template-columns: 1fr;
             }
 
-            .features {
-                grid-template-columns: 1fr;
+            .store-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .store-button {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="/" class="back-link">teamzblitzに戻る</a>
+    <a href="/" class="back-link">teamzblitzに戻る</a>
 
-        <h1>satorino</h1>
-        <p class="tagline">次世代のプロダクト体験を提供します</p>
-
-        <div class="section">
-            <h2>概要</h2>
-            <p>
-                satorinoは、teamzblitzが開発する革新的なプロダクトです。
-                最新のテクノロジーとユーザー中心の設計思想を組み合わせ、
-                これまでにない新しい体験を提供します。
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="logo">Satorino</h1>
+            <p class="hero-tagline">25分の集中が、小さな悟りになる</p>
+            <p class="hero-description">
+                集中できたか、できなかったか。<br>
+                それに気づくことが「悟り」です。
             </p>
-            <p>
-                私たちは、シンプルさと強力さを両立させることを信念に、
-                日々開発を進めています。
-            </p>
+            <a href="#download" class="cta-button">無料でダウンロード</a>
         </div>
+    </section>
 
-        <div class="section">
-            <h2>主な特徴</h2>
-            <div class="features">
-                <div class="feature-card">
-                    <h3>🚀 高速</h3>
-                    <p>最適化されたパフォーマンスで、ストレスフリーな体験を実現します。</p>
+    <!-- Concept Section -->
+    <section class="section concept">
+        <h2 class="section-title">コンセプト</h2>
+        <div class="concept-text">
+            日々の仕事や勉強で、私たちは「完璧な集中」を求めがちです。でも現実には、集中できる日もあれば、気が散ってしまう日もある。
+        </div>
+        <div class="concept-text">
+            <span class="concept-highlight">Satorinoは、そのありのままを受け入れます。</span>
+        </div>
+        <div class="concept-text">
+            25分のセッションが終わったら、自分に問いかける。「今、どれくらい集中できた？」。その答えに正解も不正解もありません。ただ気づくこと、それ自体が小さな「悟り」です。
+        </div>
+    </section>
+
+    <!-- Journey Timeline -->
+    <section class="section journey">
+        <h2 class="section-title">Satorinoとの日々</h2>
+        <p class="section-subtitle">使い続けることで、自分自身への理解が深まります</p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-label">DAY 1</div>
+                <div class="timeline-content">
+                    初めてのセッション。25分後、「集中度どうだった？」と聞かれる。正直に「40%くらいかな」と記録。それでいい。<strong>気づけたことが最初の悟り</strong>。
                 </div>
-                <div class="feature-card">
-                    <h3>🎨 美しいデザイン</h3>
-                    <p>直感的で洗練されたインターフェースで、使いやすさを追求しています。</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-label">WEEK 1</div>
+                <div class="timeline-content">
+                    何度かセッションを重ねるうちに、自分のパターンが見えてくる。午前中は集中しやすい、昼食後は難しい。<strong>これも悟り</strong>。
                 </div>
-                <div class="feature-card">
-                    <h3>🔒 セキュア</h3>
-                    <p>最新のセキュリティ技術で、あなたのデータを守ります。</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-label">MONTH 1</div>
+                <div class="timeline-content">
+                    ログを振り返ると、小さな悟りが積み重なっている。数字の上下に一喜一憂するのではなく、「自分はこういう人間なんだな」と<strong>理解が深まる</strong>。
                 </div>
-                <div class="feature-card">
-                    <h3>🌐 クロスプラットフォーム</h3>
-                    <p>どのデバイスからでもアクセス可能。いつでもどこでも利用できます。</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-label">その先</div>
+                <div class="timeline-content">
+                    Satorinoは生産性を爆上げするツールではありません。<strong>自分自身への解像度を上げるツール</strong>です。小さな悟りの積み重ねが、やがて大きな自己理解になる。
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="cta-section">
-            <h2>今すぐ始めましょう</h2>
-            <p>satorinoで新しい体験を今すぐお試しください</p>
-            <a href="#" class="cta-button">詳細を見る</a>
-        </div>
+    <!-- Features Section -->
+    <section class="section features">
+        <h2 class="section-title">主な機能</h2>
 
-        <div class="footer">
-            <p>&copy; 2024 teamzblitz. All rights reserved.</p>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">⏱️</div>
+                <h3 class="feature-title">ポモドーロタイマー</h3>
+                <p class="feature-description">25分 / 5分のシンプルなタイマー。ひとつのことに集中します。</p>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">💭</div>
+                <h3 class="feature-title">ふりかえり</h3>
+                <p class="feature-description">セッション後に「どれくらい集中できた？」と問いかけます。正直に記録するだけ。</p>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">📊</div>
+                <h3 class="feature-title">可視化</h3>
+                <p class="feature-description">日別・週別のふりかえり機能で、自分の集中パターンを発見できます。</p>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">🌱</div>
+                <h3 class="feature-title">悟りの積み重ね</h3>
+                <p class="feature-description">小さな気づきを積み重ねて、自分らしい集中のかたちを見つけていきます。</p>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="section philosophy">
+        <h2 class="section-title">Satorinoの哲学</h2>
+        <p class="philosophy-text">
+            <span class="philosophy-emphasis">完璧を目指さなくていい。</span><br>
+            続けることで、自分の集中パターンが見えてきます。
+        </p>
+        <p class="philosophy-text">
+            Satorinoは生産性を無理に上げるツールではありません。<br>
+            <span class="philosophy-emphasis">自分自身を理解するためのツール</span>です。
+        </p>
+    </section>
+
+    <!-- App Store Section -->
+    <section class="section app-store" id="download">
+        <h2 class="section-title">ダウンロード</h2>
+        <p class="store-description">
+            25分の集中を、小さな悟りに。<br>
+            集中度を記録して自分を知るポモドーロタイマー。
+        </p>
+
+        <div class="store-buttons">
+            <a href="#" class="store-button">
+                <span class="store-button-icon"></span>
+                <span>App Store</span>
+            </a>
+            <a href="#" class="store-button">
+                <span class="store-button-icon"></span>
+                <span>Google Play</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 teamzblitz. All rights reserved.</p>
+        <p style="margin-top: 10px;">
+            <a href="/">teamzblitzに戻る</a>
+        </p>
+    </footer>
 </body>
 </html>
