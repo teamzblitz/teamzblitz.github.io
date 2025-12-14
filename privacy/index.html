@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="teamzblitz プライバシーポリシー - Privacy Policy">
+    <title>プライバシーポリシー - teamzblitz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2D3748;
+            --secondary: #4299E1;
+            --accent: #F6AD55;
+            --bg-light: #FFFFFF;
+            --bg-dark: #1A202C;
+            --text: #1A202C;
+            --text-light: #4A5568;
+            --border: #E2E8F0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.8;
+            color: var(--text);
+            background: var(--bg-light);
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 8px 12px;
+            border-radius: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .lang-button {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            cursor: pointer;
+            padding: 5px 12px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .lang-button:hover {
+            background: rgba(66, 153, 225, 0.1);
+            color: var(--secondary);
+        }
+
+        .lang-button.active {
+            background: var(--secondary);
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background: var(--bg-light);
+            padding: 20px 0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+        }
+
+        .back-link::before {
+            content: "← ";
+        }
+
+        /* Content */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .last-updated {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-top: 50px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            line-height: 1.9;
+        }
+
+        ul {
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        .app-section {
+            background: #F7FAFC;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .app-section h3 {
+            margin-top: 0;
+            color: var(--secondary);
+        }
+
+        .contact-info {
+            background: var(--primary);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+
+        .contact-info h2 {
+            color: white;
+            border-bottom-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-info a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-dark);
+            color: rgba(255, 255, 255, 0.6);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .content {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-button active" onclick="switchLanguage('ja')">日本語</button>
+        <button class="lang-button" onclick="switchLanguage('en')">English</button>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo">teamzblitz</a>
+            <a href="/" class="back-link" data-ja="ホームに戻る" data-en="Back to Home">ホームに戻る</a>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <div class="content">
+        <h1 data-ja="プライバシーポリシー" data-en="Privacy Policy">プライバシーポリシー</h1>
+        <p class="last-updated" data-ja="最終更新日: 2024年12月14日" data-en="Last Updated: December 14, 2024">最終更新日: 2024年12月14日</p>
+
+        <p data-ja="teamzblitz（以下「当チーム」）は、ユーザーのプライバシーを尊重し、個人情報の保護に努めています。本プライバシーポリシーは、当チームが提供するアプリケーションにおける情報の取り扱いについて説明するものです。" data-en="teamzblitz (hereinafter 'we' or 'our team') respects user privacy and is committed to protecting personal information. This Privacy Policy explains how we handle information in the applications we provide.">
+            teamzblitz（以下「当チーム」）は、ユーザーのプライバシーを尊重し、個人情報の保護に努めています。本プライバシーポリシーは、当チームが提供するアプリケーションにおける情報の取り扱いについて説明するものです。
+        </p>
+
+        <h2 data-ja="1. 適用範囲" data-en="1. Scope">1. 適用範囲</h2>
+        <p data-ja="本プライバシーポリシーは、teamzblitzが開発・提供する以下のアプリケーションに適用されます：" data-en="This Privacy Policy applies to the following applications developed and provided by teamzblitz:">
+            本プライバシーポリシーは、teamzblitzが開発・提供する以下のアプリケーションに適用されます：
+        </p>
+        <ul>
+            <li>Satorino</li>
+            <li data-ja="今後リリースされる当チームのその他のアプリケーション" data-en="Other applications to be released by our team in the future">今後リリースされる当チームのその他のアプリケーション</li>
+        </ul>
+
+        <h2 data-ja="2. 収集する情報" data-en="2. Information We Collect">2. 収集する情報</h2>
+        <p data-ja="当チームのアプリケーションが収集する情報は、アプリケーションごとに異なります。各アプリケーションの情報収集については以下をご確認ください。" data-en="The information collected by our applications varies by application. Please see below for information collection by each application.">
+            当チームのアプリケーションが収集する情報は、アプリケーションごとに異なります。各アプリケーションの情報収集については以下をご確認ください。
+        </p>
+
+        <div class="app-section">
+            <h3>Satorino</h3>
+            <p data-ja="Satorinoは、以下の情報をお使いのデバイス内にのみ保存します：" data-en="Satorino stores the following information only on your device:">
+                Satorinoは、以下の情報をお使いのデバイス内にのみ保存します：
+            </p>
+            <ul>
+                <li data-ja="集中セッションの記録（開始時刻、終了時刻、セッション時間）" data-en="Focus session records (start time, end time, session duration)">集中セッションの記録（開始時刻、終了時刻、セッション時間）</li>
+                <li data-ja="集中度の自己評価データ" data-en="Self-assessment data of focus level">集中度の自己評価データ</li>
+                <li data-ja="アプリの設定情報" data-en="App settings">アプリの設定情報</li>
+            </ul>
+            <p data-ja="<strong>重要:</strong> これらのデータは、お使いのデバイス内にのみ保存され、外部のサーバーには一切送信されません。当チームがこれらのデータにアクセスすることはありません。" data-en="<strong>Important:</strong> This data is stored only on your device and is never transmitted to external servers. Our team does not have access to this data.">
+                <strong>重要:</strong> これらのデータは、お使いのデバイス内にのみ保存され、外部のサーバーには一切送信されません。当チームがこれらのデータにアクセスすることはありません。
+            </p>
+        </div>
+
+        <h2 data-ja="3. 情報の利用目的" data-en="3. Purpose of Use">3. 情報の利用目的</h2>
+        <p data-ja="アプリ内で収集された情報は、以下の目的でのみ使用されます：" data-en="Information collected within the app is used only for the following purposes:">
+            アプリ内で収集された情報は、以下の目的でのみ使用されます：
+        </p>
+        <ul>
+            <li data-ja="アプリケーションの機能提供" data-en="Providing application functionality">アプリケーションの機能提供</li>
+            <li data-ja="ユーザー体験の向上" data-en="Improving user experience">ユーザー体験の向上</li>
+            <li data-ja="統計情報の表示（デバイス内のみ）" data-en="Displaying statistics (on device only)">統計情報の表示（デバイス内のみ）</li>
+        </ul>
+
+        <h2 data-ja="4. 情報の保存と管理" data-en="4. Data Storage and Management">4. 情報の保存と管理</h2>
+        <p data-ja="当チームのアプリケーションで収集された情報は、原則としてお使いのデバイス内にのみ保存されます。データの削除は、アプリケーションをアンインストールすることで行えます。" data-en="Information collected by our applications is stored only on your device. Data can be deleted by uninstalling the application.">
+            当チームのアプリケーションで収集された情報は、原則としてお使いのデバイス内にのみ保存されます。データの削除は、アプリケーションをアンインストールすることで行えます。
+        </p>
+
+        <h2 data-ja="5. 第三者への提供" data-en="5. Disclosure to Third Parties">5. 第三者への提供</h2>
+        <p data-ja="当チームは、以下の場合を除き、ユーザーの情報を第三者に提供することはありません：" data-en="We do not disclose user information to third parties except in the following cases:">
+            当チームは、以下の場合を除き、ユーザーの情報を第三者に提供することはありません：
+        </p>
+        <ul>
+            <li data-ja="ユーザーの同意がある場合" data-en="With user consent">ユーザーの同意がある場合</li>
+            <li data-ja="法令に基づく場合" data-en="When required by law">法令に基づく場合</li>
+            <li data-ja="人の生命、身体または財産の保護のために必要がある場合" data-en="When necessary to protect life, body, or property">人の生命、身体または財産の保護のために必要がある場合</li>
+        </ul>
+
+        <h2 data-ja="6. Cookie等の利用" data-en="6. Use of Cookies">6. Cookie等の利用</h2>
+        <p data-ja="当チームのウェブサイトでは、ユーザー体験の向上のためにCookieを使用する場合があります。アプリケーション内ではCookieは使用しません。" data-en="Our website may use cookies to improve user experience. Cookies are not used within the applications.">
+            当チームのウェブサイトでは、ユーザー体験の向上のためにCookieを使用する場合があります。アプリケーション内ではCookieは使用しません。
+        </p>
+
+        <h2 data-ja="7. 未成年者の利用" data-en="7. Use by Minors">7. 未成年者の利用</h2>
+        <p data-ja="当チームのアプリケーションは、13歳未満のお子様を対象としていません。13歳未満のお子様が当チームのアプリケーションを利用する場合は、保護者の同意が必要です。" data-en="Our applications are not intended for children under 13 years of age. If a child under 13 uses our applications, parental consent is required.">
+            当チームのアプリケーションは、13歳未満のお子様を対象としていません。13歳未満のお子様が当チームのアプリケーションを利用する場合は、保護者の同意が必要です。
+        </p>
+
+        <h2 data-ja="8. プライバシーポリシーの変更" data-en="8. Changes to Privacy Policy">8. プライバシーポリシーの変更</h2>
+        <p data-ja="当チームは、必要に応じて本プライバシーポリシーを変更することがあります。変更後のプライバシーポリシーは、本ページに掲載した時点で効力を生じるものとします。" data-en="We may change this Privacy Policy as necessary. The revised Privacy Policy shall take effect when posted on this page.">
+            当チームは、必要に応じて本プライバシーポリシーを変更することがあります。変更後のプライバシーポリシーは、本ページに掲載した時点で効力を生じるものとします。
+        </p>
+
+        <div class="contact-info">
+            <h2 data-ja="9. お問い合わせ" data-en="9. Contact">9. お問い合わせ</h2>
+            <p data-ja="本プライバシーポリシーに関するご質問やご不明な点がございましたら、以下までお問い合わせください：" data-en="If you have any questions or concerns about this Privacy Policy, please contact us at:">
+                本プライバシーポリシーに関するご質問やご不明な点がございましたら、以下までお問い合わせください：
+            </p>
+            <p>
+                <strong>Email:</strong> <a href="mailto:team@teamzblitz.dev">team@teamzblitz.dev</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 teamzblitz. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const savedLang = localStorage.getItem('preferredLanguage') || 'ja';
+
+        document.addEventListener('DOMContentLoaded', function() {
+            if (savedLang === 'en') {
+                switchLanguage('en', true);
+            }
+        });
+
+        function switchLanguage(lang, skipEvent = false) {
+            document.documentElement.lang = lang;
+
+            document.querySelectorAll('[data-ja][data-en]').forEach(element => {
+                const isHTML = element.querySelector('strong, a, br');
+                if (isHTML) {
+                    // HTML content
+                    if (lang === 'ja') {
+                        element.innerHTML = element.getAttribute('data-ja');
+                    } else {
+                        element.innerHTML = element.getAttribute('data-en');
+                    }
+                } else {
+                    // Plain text
+                    if (lang === 'ja') {
+                        element.textContent = element.getAttribute('data-ja');
+                    } else {
+                        element.textContent = element.getAttribute('data-en');
+                    }
+                }
+            });
+
+            document.querySelectorAll('.lang-button').forEach(button => {
+                button.classList.remove('active');
+                if ((lang === 'ja' && button.textContent === '日本語') ||
+                    (lang === 'en' && button.textContent === 'English')) {
+                    button.classList.add('active');
+                }
+            });
+
+            localStorage.setItem('preferredLanguage', lang);
+        }
+    </script>
+</body>
+</html>
