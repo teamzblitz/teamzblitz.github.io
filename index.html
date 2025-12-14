@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="teamzblitz - Creating innovative apps that help you understand yourself better.">
-    <title>teamzblitz - Apps for Self-Discovery</title>
+    <meta name="description" content="teamzblitz - 志を同じくするクリエイターによるモバイルアプリ開発コレクティブ">
+    <title>teamzblitz - Creative Collective</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -14,19 +17,21 @@
         }
 
         :root {
-            --primary-color: #FF6B4A;
-            --secondary-color: #1a1a1a;
-            --text-dark: #333;
-            --text-light: #666;
-            --bg-light: #fafafa;
-            --white: #ffffff;
+            --primary: #2D3748;
+            --secondary: #4299E1;
+            --accent: #F6AD55;
+            --bg-light: #FFFFFF;
+            --bg-dark: #1A202C;
+            --text: #1A202C;
+            --text-light: #4A5568;
+            --border: #E2E8F0;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: var(--text-dark);
-            background: var(--white);
+            color: var(--text);
+            background: var(--bg-light);
         }
 
         /* Language Switcher */
@@ -39,7 +44,7 @@
             background: rgba(255, 255, 255, 0.95);
             padding: 8px 12px;
             border-radius: 25px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             z-index: 1000;
         }
 
@@ -56,23 +61,23 @@
         }
 
         .lang-button:hover {
-            background: rgba(255, 107, 74, 0.1);
-            color: var(--primary-color);
+            background: rgba(66, 153, 225, 0.1);
+            color: var(--secondary);
         }
 
         .lang-button.active {
-            background: var(--primary-color);
+            background: var(--secondary);
             color: white;
         }
 
         /* Header */
         header {
-            background: var(--white);
+            background: var(--bg-light);
             padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         .header-content {
@@ -85,27 +90,67 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            color: var(--secondary-color);
+            color: var(--primary);
             text-decoration: none;
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
-            padding: 100px 20px 80px;
-            text-align: center;
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
         }
 
-        .hero-content {
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        /* Section Base */
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
             max-width: 1200px;
             margin: 0 auto;
         }
 
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--bg-light) 0%, #F7FAFC 100%);
+            padding: 120px 20px 80px;
+            text-align: center;
+        }
+
         .hero-tagline {
-            font-size: 0.95rem;
-            color: var(--primary-color);
+            font-size: 1rem;
+            color: var(--secondary);
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 20px;
@@ -113,309 +158,459 @@
         }
 
         .hero-title {
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 700;
-            color: var(--secondary-color);
+            color: var(--primary);
             margin-bottom: 20px;
-            line-height: 1.2;
+            line-height: 1.1;
         }
 
-        .hero-subtitle {
+        .hero-description {
             font-size: 1.3rem;
             color: var(--text-light);
             margin-bottom: 40px;
-            max-width: 700px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        /* Featured App Section */
-        .featured-app {
-            background: var(--white);
-            padding: 80px 20px;
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(66, 153, 225, 0.2);
         }
 
-        .featured-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
+        .cta-button:hover {
+            background: #3182CE;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(66, 153, 225, 0.3);
         }
 
-        .app-preview {
+        /* Philosophy Section */
+        .philosophy {
+            background: var(--bg-light);
+        }
+
+        .philosophy-text {
+            font-size: 1.2rem;
+            color: var(--text);
+            line-height: 1.9;
+            max-width: 900px;
+            margin: 0 auto 60px;
             text-align: center;
-            position: relative;
         }
 
-        .phone-mockup {
-            max-width: 300px;
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
             margin: 0 auto;
-            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
         }
 
-        .app-info h2 {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
+        .value-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-icon {
+            font-size: 3rem;
             margin-bottom: 20px;
         }
 
-        .app-tagline {
+        .value-title {
             font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-bottom: 30px;
-            font-weight: 300;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
         }
 
-        .app-description {
-            font-size: 1.1rem;
+        .value-desc {
             color: var(--text-light);
-            line-height: 1.8;
-            margin-bottom: 40px;
+            font-size: 1rem;
         }
 
-        .download-buttons {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
+        /* Team Section */
+        .team {
+            background: #F7FAFC;
         }
 
-        .store-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px 24px;
-            background: var(--secondary-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .store-badge:hover {
-            background: #2d2d2d;
-            transform: translateY(-2px);
-        }
-
-        .store-badge i {
-            font-size: 1.5rem;
-        }
-
-        .learn-more {
-            display: inline-block;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-
-        .learn-more:hover {
-            color: #FF5533;
-        }
-
-        .learn-more i {
-            margin-left: 5px;
-            transition: transform 0.3s ease;
-        }
-
-        .learn-more:hover i {
-            transform: translateX(5px);
-        }
-
-        /* Features Section */
-        .features {
-            background: var(--bg-light);
-            padding: 80px 20px;
-        }
-
-        .features-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-        }
-
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-light);
-        }
-
-        .features-grid {
+        .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
         }
 
-        .feature-card {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        .member-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
             transition: all 0.3s ease;
         }
 
-        .feature-card:hover {
+        .member-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary-color) 0%, #FF5533 100%);
-            border-radius: 15px;
+        .member-avatar {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
+            font-size: 5rem;
             color: white;
         }
 
-        .feature-title {
-            font-size: 1.4rem;
-            color: var(--secondary-color);
+        .member-info {
+            padding: 30px;
+        }
+
+        .member-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .member-role {
+            color: var(--secondary);
+            font-weight: 600;
             margin-bottom: 15px;
         }
 
-        .feature-description {
+        .member-bio {
             color: var(--text-light);
-            line-height: 1.8;
+            margin-bottom: 20px;
+            line-height: 1.7;
         }
 
-        /* More Apps Section */
-        .more-apps {
-            background: var(--white);
-            padding: 80px 20px;
-        }
-
-        .more-apps-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .coming-soon-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .coming-soon-card {
-            background: var(--bg-light);
-            padding: 60px 30px;
-            border-radius: 15px;
-            border: 2px dashed #ddd;
-            transition: all 0.3s ease;
-            opacity: 0.7;
-        }
-
-        .coming-soon-card:hover {
-            opacity: 1;
-            border-color: var(--primary-color);
-        }
-
-        .coming-soon-icon {
-            font-size: 3rem;
-            color: var(--text-light);
+        .member-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
             margin-bottom: 20px;
         }
 
-        .coming-soon-text {
-            font-size: 1.1rem;
+        .skill-tag {
+            background: #EDF2F7;
+            color: var(--text);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .member-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
             color: var(--text-light);
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--secondary);
+        }
+
+        /* Projects Section */
+        .projects {
+            background: var(--bg-light);
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            margin-bottom: 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .project-image {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-mockup {
+            max-width: 250px;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+        }
+
+        .project-info {
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .project-status {
+            display: inline-block;
+            background: #C6F6D5;
+            color: #22543D;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
             font-weight: 600;
+            margin-bottom: 20px;
+            width: fit-content;
+        }
+
+        .project-name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .project-tagline {
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .project-description {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .tech-tag {
+            background: #EBF8FF;
+            color: var(--secondary);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .project-team {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Process Section */
+        .process {
+            background: #F7FAFC;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .process-step {
+            text-align: center;
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .step-description {
+            color: var(--text-light);
+        }
+
+        .tools-section {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+        }
+
+        .tools-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .tool-item {
+            text-align: center;
+        }
+
+        .tool-name {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .tool-use {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact .section-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .contact-email {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .contact-social {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-social a {
+            color: white;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-social a:hover {
+            color: var(--accent);
+            transform: scale(1.1);
+        }
+
+        .join-message {
+            font-size: 1.2rem;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         /* Footer */
         footer {
-            background: var(--secondary-color);
-            color: white;
-            padding: 60px 20px 30px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 40px;
-        }
-
-        .footer-about h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .footer-about p {
-            color: #999;
-            line-height: 1.8;
-        }
-
-        .footer-links h4 {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links a {
-            color: #999;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 10px;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .footer-bottom {
+            background: var(--bg-dark);
+            color: rgba(255, 255, 255, 0.6);
+            padding: 40px 20px;
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #333;
-            color: #999;
+        }
+
+        .footer-message {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.8);
         }
 
         /* Responsive */
         @media (max-width: 968px) {
-            .featured-content {
-                grid-template-columns: 1fr;
-                gap: 50px;
-            }
-
-            .app-preview {
-                order: -1;
-            }
-
             .hero-title {
                 font-size: 2.5rem;
             }
 
-            .download-buttons {
-                flex-direction: column;
+            .section-title {
+                font-size: 2rem;
             }
 
-            .footer-content {
+            .project-card {
                 grid-template-columns: 1fr;
-                gap: 40px;
+            }
+
+            .project-image {
+                min-height: 300px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -424,17 +619,8 @@
                 font-size: 2rem;
             }
 
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-
-            .language-switcher {
-                top: 15px;
-                right: 15px;
-            }
-
-            .section-title {
-                font-size: 2rem;
+            .process-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -450,170 +636,256 @@
     <header>
         <div class="header-content">
             <a href="/" class="logo">teamzblitz</a>
+            <nav>
+                <ul>
+                    <li><a href="#about" data-ja="私たちについて" data-en="About">私たちについて</a></li>
+                    <li><a href="#team" data-ja="チーム" data-en="Team">チーム</a></li>
+                    <li><a href="#projects" data-ja="プロジェクト" data-en="Projects">プロジェクト</a></li>
+                    <li><a href="#contact" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <p class="hero-tagline" data-ja="革新的なアプリ開発" data-en="Innovative App Development">革新的なアプリ開発</p>
-            <h1 class="hero-title" data-ja="自分を知るための、アプリ。" data-en="Apps for Self-Discovery.">自分を知るための、アプリ。</h1>
-            <p class="hero-subtitle" data-ja="teamzblitzは、あなた自身への理解を深めるアプリを開発しています。完璧を求めず、ありのままの自分と向き合うためのツールを提供します。" data-en="teamzblitz develops apps that deepen your understanding of yourself. We provide tools to face yourself as you are, without seeking perfection.">teamzblitzは、あなた自身への理解を深めるアプリを開発しています。完璧を求めず、ありのままの自分と向き合うためのツールを提供します。</p>
+        <div class="container">
+            <p class="hero-tagline" data-ja="創造的コレクティブ" data-en="Creative Collective">創造的コレクティブ</p>
+            <h1 class="hero-title">teamzblitz</h1>
+            <p class="hero-description" data-ja="志を同じくするクリエイターによるモバイルアプリ開発コレクティブ。Developer、Designer、Product Managerが集まり、革新的なモバイル体験を創造しています。" data-en="A mobile app development collective of like-minded creators. Developers, Designers, and Product Managers coming together to create innovative mobile experiences.">志を同じくするクリエイターによるモバイルアプリ開発コレクティブ。Developer、Designer、Product Managerが集まり、革新的なモバイル体験を創造しています。</p>
+            <a href="#projects" class="cta-button" data-ja="プロジェクトを見る" data-en="View Projects">プロジェクトを見る</a>
         </div>
     </section>
 
-    <!-- Featured App: Satorino -->
-    <section class="featured-app">
-        <div class="featured-content">
-            <div class="app-preview">
-                <div class="phone-mockup">
-                    <svg viewBox="0 0 300 600" xmlns="http://www.w3.org/2000/svg">
-                        <!-- iPhone Mockup -->
+    <!-- Philosophy Section -->
+    <section id="about" class="philosophy">
+        <div class="container">
+            <h2 class="section-title" data-ja="私たちについて" data-en="About Us">私たちについて</h2>
+            <div class="philosophy-text" data-ja="会社ではなく、有志の集まり。それが私たちのアイデンティティです。異なるスキルを持つメンバーが、共通のビジョンのもとに集まり、ユーザーの日常を豊かにするアプリを生み出しています。自由な発想、フラットな関係性、そして本質的な価値創造。これが私たちのスタイルです。" data-en="We are not a company, but a collective of volunteers. That's our identity. Members with different skills gather under a common vision to create apps that enrich users' daily lives. Free thinking, flat relationships, and creating essential value. This is our style.">
+                会社ではなく、有志の集まり。それが私たちのアイデンティティです。<br>
+                異なるスキルを持つメンバーが、共通のビジョンのもとに集まり、<br>
+                ユーザーの日常を豊かにするアプリを生み出しています。<br>
+                自由な発想、フラットな関係性、そして本質的な価値創造。<br>
+                これが私たちのスタイルです。
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🚀</div>
+                    <h3 class="value-title" data-ja="革新性" data-en="Innovation">革新性</h3>
+                    <p class="value-desc" data-ja="新しい価値を生み出す" data-en="Creating new value">新しい価値を生み出す</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3 class="value-title" data-ja="協働" data-en="Collaboration">協働</h3>
+                    <p class="value-desc" data-ja="多様な才能の融合" data-en="Fusion of diverse talents">多様な才能の融合</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h3 class="value-title" data-ja="自由" data-en="Freedom">自由</h3>
+                    <p class="value-desc" data-ja="創造的な環境" data-en="Creative environment">創造的な環境</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <h2 class="section-title" data-ja="チームメンバー" data-en="Team Members">チームメンバー</h2>
+            <p class="section-subtitle" data-ja="情熱を持った多様なクリエイター" data-en="Passionate diverse creators">情熱を持った多様なクリエイター</p>
+
+            <div class="team-grid">
+                <div class="member-card">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name" data-ja="開発者A" data-en="Developer A">開発者A</h3>
+                        <p class="member-role">Mobile Developer</p>
+                        <p class="member-bio" data-ja="iOS/Android開発を担当。Kotlin Multiplatformのエキスパート。" data-en="Responsible for iOS/Android development. Expert in Kotlin Multiplatform.">iOS/Android開発を担当。Kotlin Multiplatformのエキスパート。</p>
+                        <div class="member-skills">
+                            <span class="skill-tag">Swift</span>
+                            <span class="skill-tag">Kotlin</span>
+                            <span class="skill-tag">Flutter</span>
+                        </div>
+                        <div class="member-social">
+                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name" data-ja="デザイナーB" data-en="Designer B">デザイナーB</h3>
+                        <p class="member-role">UI/UX Designer</p>
+                        <p class="member-bio" data-ja="ユーザー体験とビジュアルデザインを担当。" data-en="Responsible for user experience and visual design.">ユーザー体験とビジュアルデザインを担当。</p>
+                        <div class="member-skills">
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Adobe XD</span>
+                            <span class="skill-tag">Prototyping</span>
+                        </div>
+                        <div class="member-social">
+                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name" data-ja="プロダクトマネージャーC" data-en="Product Manager C">プロダクトマネージャーC</h3>
+                        <p class="member-role">Product Manager</p>
+                        <p class="member-bio" data-ja="プロダクト戦略とチーム調整を担当。" data-en="Responsible for product strategy and team coordination.">プロダクト戦略とチーム調整を担当。</p>
+                        <div class="member-skills">
+                            <span class="skill-tag">Product Strategy</span>
+                            <span class="skill-tag">Analytics</span>
+                            <span class="skill-tag">Agile</span>
+                        </div>
+                        <div class="member-social">
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title" data-ja="プロジェクト" data-en="Projects">プロジェクト</h2>
+            <p class="section-subtitle" data-ja="私たちが創り上げたプロダクト" data-en="Products we've created">私たちが創り上げたプロダクト</p>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <svg class="project-mockup" viewBox="0 0 300 600" xmlns="http://www.w3.org/2000/svg">
                         <rect x="0" y="0" width="300" height="600" rx="40" fill="#1a1a1a"/>
                         <rect x="10" y="10" width="280" height="580" rx="35" fill="#2d2d2d"/>
-
-                        <!-- Screen -->
                         <rect x="15" y="15" width="270" height="570" rx="30" fill="#000"/>
-
-                        <!-- App Content -->
                         <text x="150" y="100" text-anchor="middle" fill="#fff" font-size="14" font-family="Arial">Satorino</text>
-
-                        <!-- Timer Circle -->
                         <circle cx="150" cy="300" r="80" fill="none" stroke="#FF6B4A" stroke-width="8"/>
                         <text x="150" y="310" text-anchor="middle" fill="#FF6B4A" font-size="48" font-weight="bold" font-family="Arial">25:00</text>
-
-                        <!-- Start Button -->
                         <rect x="100" y="450" width="100" height="40" rx="20" fill="#FF6B4A"/>
-                        <text x="150" y="475" text-anchor="middle" fill="#fff" font-size="14" font-family="Arial">スタート</text>
+                        <text x="150" y="475" text-anchor="middle" fill="#fff" font-size="14" font-family="Arial">START</text>
                     </svg>
                 </div>
-            </div>
-
-            <div class="app-info">
-                <h2>Satorino</h2>
-                <p class="app-tagline" data-ja="25分の集中が、小さな悟りになる" data-en="25 minutes of focus becomes a small enlightenment">25分の集中が、小さな悟りになる</p>
-                <p class="app-description" data-ja="Satorinoは、ポモドーロ・テクニックに「ふりかえり」を加えたシンプルなタイマーアプリです。25分のセッションが終わるたびに、「どれくらい集中できた？」と問いかけます。その気づきが、小さな悟りになります。" data-en="Satorino is a simple timer app that adds 'reflection' to the Pomodoro Technique. After each 25-minute session, it asks 'How well could you focus?' That awareness becomes a small enlightenment.">Satorinoは、ポモドーロ・テクニックに「ふりかえり」を加えたシンプルなタイマーアプリです。25分のセッションが終わるたびに、「どれくらい集中できた？」と問いかけます。その気づきが、小さな悟りになります。</p>
-
-                <div class="download-buttons">
-                    <a href="#" class="store-badge">
-                        <i class="fab fa-apple"></i>
-                        <span>App Store</span>
-                    </a>
-                    <a href="#" class="store-badge">
-                        <i class="fab fa-google-play"></i>
-                        <span>Google Play</span>
-                    </a>
-                </div>
-
-                <a href="/satorino/" class="learn-more" data-ja="詳しく見る" data-en="Learn More">詳しく見る <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features">
-        <div class="features-content">
-            <div class="section-header">
-                <h2 class="section-title" data-ja="Satorinoの特徴" data-en="Satorino Features">Satorinoの特徴</h2>
-                <p class="section-subtitle" data-ja="シンプルだけど、深い気づきを得られる" data-en="Simple, yet profound insights">シンプルだけど、深い気づきを得られる</p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-clock"></i>
+                <div class="project-info">
+                    <span class="project-status" data-ja="開発中" data-en="In Development">開発中</span>
+                    <h3 class="project-name">Satorino</h3>
+                    <p class="project-tagline" data-ja="25分の集中が、小さな悟りになる" data-en="25 minutes of focus becomes a small enlightenment">25分の集中が、小さな悟りになる</p>
+                    <p class="project-description" data-ja="集中セッションごとに気分トラッキングができる、新しいタイプのポモドーロタイマー。自分自身の集中パターンを理解し、より良い働き方を見つけることができます。" data-en="A new type of Pomodoro timer that allows mood tracking for each focus session. Understand your own focus patterns and find a better way to work.">集中セッションごとに気分トラッキングができる、新しいタイプのポモドーロタイマー。自分自身の集中パターンを理解し、より良い働き方を見つけることができます。</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Kotlin Multiplatform</span>
+                        <span class="tech-tag">Compose Multiplatform</span>
+                        <span class="tech-tag">Firebase</span>
                     </div>
-                    <h3 class="feature-title" data-ja="ポモドーロタイマー" data-en="Pomodoro Timer">ポモドーロタイマー</h3>
-                    <p class="feature-description" data-ja="25分 / 5分のシンプルなタイマー。ひとつのことに集中します。" data-en="Simple 25/5 minute timer. Focus on one thing at a time.">25分 / 5分のシンプルなタイマー。ひとつのことに集中します。</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-comment-dots"></i>
+                    <div class="project-team">
+                        <strong data-ja="チーム：" data-en="Team:">チーム：</strong>
+                        <span data-ja="開発者A, デザイナーB, プロダクトマネージャーC" data-en="Developer A, Designer B, Product Manager C">開発者A, デザイナーB, プロダクトマネージャーC</span>
                     </div>
-                    <h3 class="feature-title" data-ja="ふりかえり" data-en="Reflection">ふりかえり</h3>
-                    <p class="feature-description" data-ja="セッション後に「どれくらい集中できた？」と問いかけます。正直に記録するだけ。" data-en="After each session: 'How well could you focus?' Just record honestly.">セッション後に「どれくらい集中できた？」と問いかけます。正直に記録するだけ。</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
+                    <div class="project-links">
+                        <a href="/satorino/" class="project-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span data-ja="詳しく見る" data-en="Learn More">詳しく見る</span>
+                        </a>
                     </div>
-                    <h3 class="feature-title" data-ja="パターン発見" data-en="Pattern Discovery">パターン発見</h3>
-                    <p class="feature-description" data-ja="日別・週別のふりかえり機能で、自分の集中パターンを発見できます。" data-en="Daily and weekly reflections help you discover your focus patterns.">日別・週別のふりかえり機能で、自分の集中パターンを発見できます。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- More Apps Coming Soon -->
-    <section class="more-apps">
-        <div class="more-apps-content">
-            <div class="section-header">
-                <h2 class="section-title" data-ja="その他のプロダクト" data-en="More Products">その他のプロダクト</h2>
-                <p class="section-subtitle" data-ja="さらなるアプリを開発中です" data-en="More apps in development">さらなるアプリを開発中です</p>
-            </div>
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <h2 class="section-title" data-ja="私たちの働き方" data-en="Our Process">私たちの働き方</h2>
+            <p class="section-subtitle" data-ja="協働して価値を生み出すプロセス" data-en="Process of creating value through collaboration">協働して価値を生み出すプロセス</p>
 
-            <div class="coming-soon-grid">
-                <div class="coming-soon-card">
-                    <div class="coming-soon-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <p class="coming-soon-text" data-ja="Coming Soon" data-en="Coming Soon">Coming Soon</p>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h3 class="step-title" data-ja="アイデア共有" data-en="Idea Sharing">アイデア共有</h3>
+                    <p class="step-description" data-ja="定期的なブレストで新しいコンセプトを生み出す" data-en="Generate new concepts through regular brainstorming">定期的なブレストで新しいコンセプトを生み出す</p>
                 </div>
-
-                <div class="coming-soon-card">
-                    <div class="coming-soon-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <p class="coming-soon-text" data-ja="Coming Soon" data-en="Coming Soon">Coming Soon</p>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h3 class="step-title" data-ja="プロトタイピング" data-en="Prototyping">プロトタイピング</h3>
+                    <p class="step-description" data-ja="素早く形にして、早期にフィードバックを得る" data-en="Quickly shape ideas and get early feedback">素早く形にして、早期にフィードバックを得る</p>
                 </div>
-
-                <div class="coming-soon-card">
-                    <div class="coming-soon-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="coming-soon-text" data-ja="Coming Soon" data-en="Coming Soon">Coming Soon</p>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h3 class="step-title" data-ja="協働開発" data-en="Collaborative Development">協働開発</h3>
+                    <p class="step-description" data-ja="Dev・Design・PMが密に連携して開発" data-en="Dev, Design, and PM work closely together">Dev・Design・PMが密に連携して開発</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <h3 class="step-title" data-ja="継続的改善" data-en="Continuous Improvement">継続的改善</h3>
+                    <p class="step-description" data-ja="リリース後もユーザーの声を聞いて進化させる" data-en="Evolve by listening to users even after release">リリース後もユーザーの声を聞いて進化させる</p>
                 </div>
             </div>
+
+            <div class="tools-section">
+                <h3 class="tools-title" data-ja="使用ツール" data-en="Tools We Use">使用ツール</h3>
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <div class="tool-name">Slack</div>
+                        <div class="tool-use" data-ja="コミュニケーション" data-en="Communication">コミュニケーション</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-name">Figma</div>
+                        <div class="tool-use" data-ja="デザイン" data-en="Design">デザイン</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-name">GitHub</div>
+                        <div class="tool-use" data-ja="コード管理" data-en="Code Management">コード管理</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-name">Linear</div>
+                        <div class="tool-use" data-ja="プロジェクト管理" data-en="Project Management">プロジェクト管理</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" data-ja="お問い合わせ" data-en="Get in Touch">お問い合わせ</h2>
+            <p class="section-subtitle" data-ja="一緒にプロダクトを創りたい方、コラボレーションに興味がある方、お気軽にご連絡ください。" data-en="If you want to create products together or are interested in collaboration, feel free to contact us.">一緒にプロダクトを創りたい方、コラボレーションに興味がある方、お気軽にご連絡ください。</p>
+
+            <div class="contact-email">team@teamzblitz.dev</div>
+
+            <div class="contact-social">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+
+            <div class="join-message" data-ja="新しいメンバーも募集中です 🚀" data-en="We're also looking for new members 🚀">新しいメンバーも募集中です 🚀</div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-about">
-                <h3>teamzblitz</h3>
-                <p data-ja="自分自身を理解するためのアプリを開発しています。完璧を求めず、ありのままの自分と向き合うためのツールを提供します。" data-en="We develop apps to understand yourself. Providing tools to face yourself as you are, without seeking perfection.">自分自身を理解するためのアプリを開発しています。完璧を求めず、ありのままの自分と向き合うためのツールを提供します。</p>
-            </div>
-
-            <div class="footer-links">
-                <h4 data-ja="プロダクト" data-en="Products">プロダクト</h4>
-                <ul>
-                    <li><a href="/satorino/">Satorino</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-links">
-                <h4 data-ja="リンク" data-en="Links">リンク</h4>
-                <ul>
-                    <li><a href="#" data-ja="プライバシーポリシー" data-en="Privacy Policy">プライバシーポリシー</a></li>
-                    <li><a href="#" data-ja="利用規約" data-en="Terms of Service">利用規約</a></li>
-                    <li><a href="#" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
+        <div class="container">
+            <p class="footer-message" data-ja="「私たちは会社ではなく、情熱を持ったクリエイターの集まりです」" data-en="'We are not a company, we are a collective of passionate creators'">"私たちは会社ではなく、情熱を持ったクリエイターの集まりです"</p>
             <p>&copy; 2024 teamzblitz. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Check if language preference is stored
         const savedLang = localStorage.getItem('preferredLanguage') || 'ja';
 
-        // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
             if (savedLang === 'en') {
                 switchLanguage('en', true);
@@ -621,19 +893,18 @@
         });
 
         function switchLanguage(lang, skipEvent = false) {
-            // Update HTML lang attribute
             document.documentElement.lang = lang;
 
-            // Update all elements with data-ja and data-en attributes
             document.querySelectorAll('[data-ja][data-en]').forEach(element => {
                 if (lang === 'ja') {
-                    element.textContent = element.getAttribute('data-ja');
+                    const jaText = element.getAttribute('data-ja');
+                    element.textContent = jaText;
                 } else {
-                    element.textContent = element.getAttribute('data-en');
+                    const enText = element.getAttribute('data-en');
+                    element.textContent = enText;
                 }
             });
 
-            // Update active button state
             document.querySelectorAll('.lang-button').forEach(button => {
                 button.classList.remove('active');
                 if ((lang === 'ja' && button.textContent === '日本語') ||
@@ -642,9 +913,22 @@
                 }
             });
 
-            // Save preference
             localStorage.setItem('preferredLanguage', lang);
         }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
