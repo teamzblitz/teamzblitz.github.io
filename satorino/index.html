@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>satorino - teamzblitz</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #764ba2;
+        }
+
+        .back-link::before {
+            content: "← ";
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-radius: 15px;
+            padding: 25px;
+            border: 2px solid rgba(102, 126, 234, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .cta-section h2 {
+            color: white;
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .footer {
+            margin-top: 60px;
+            text-align: center;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 25px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+            }
+
+            .section h2 {
+                font-size: 1.6rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">teamzblitzに戻る</a>
+
+        <h1>satorino</h1>
+        <p class="tagline">次世代のプロダクト体験を提供します</p>
+
+        <div class="section">
+            <h2>概要</h2>
+            <p>
+                satorinoは、teamzblitzが開発する革新的なプロダクトです。
+                最新のテクノロジーとユーザー中心の設計思想を組み合わせ、
+                これまでにない新しい体験を提供します。
+            </p>
+            <p>
+                私たちは、シンプルさと強力さを両立させることを信念に、
+                日々開発を進めています。
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>主な特徴</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>🚀 高速</h3>
+                    <p>最適化されたパフォーマンスで、ストレスフリーな体験を実現します。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎨 美しいデザイン</h3>
+                    <p>直感的で洗練されたインターフェースで、使いやすさを追求しています。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔒 セキュア</h3>
+                    <p>最新のセキュリティ技術で、あなたのデータを守ります。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🌐 クロスプラットフォーム</h3>
+                    <p>どのデバイスからでもアクセス可能。いつでもどこでも利用できます。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>今すぐ始めましょう</h2>
+            <p>satorinoで新しい体験を今すぐお試しください</p>
+            <a href="#" class="cta-button">詳細を見る</a>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 teamzblitz. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
