@@ -304,36 +304,6 @@
             line-height: 1.7;
         }
 
-        .member-skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
-
-        .skill-tag {
-            background: #EDF2F7;
-            color: var(--text);
-            padding: 5px 12px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        .member-social {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-link {
-            color: var(--text-light);
-            font-size: 1.2rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-link:hover {
-            color: var(--secondary);
-        }
 
         /* Projects Section */
         .projects {
@@ -487,41 +457,6 @@
             color: var(--text-light);
         }
 
-        .tools-section {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
-        }
-
-        .tools-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-
-        .tool-item {
-            text-align: center;
-        }
-
-        .tool-name {
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
-
-        .tool-use {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
 
         /* Contact Section */
         .contact {
@@ -541,35 +476,7 @@
         .contact-email {
             font-size: 1.5rem;
             color: var(--accent);
-            margin-bottom: 30px;
             font-weight: 600;
-        }
-
-        .contact-social {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-bottom: 40px;
-        }
-
-        .contact-social a {
-            color: white;
-            font-size: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .contact-social a:hover {
-            color: var(--accent);
-            transform: scale(1.1);
-        }
-
-        .join-message {
-            font-size: 1.2rem;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            max-width: 600px;
-            margin: 0 auto;
         }
 
         /* Footer */
@@ -704,16 +611,6 @@
                         <h3 class="member-name" data-ja="開発者A" data-en="Developer A">開発者A</h3>
                         <p class="member-role">Mobile Developer</p>
                         <p class="member-bio" data-ja="iOS/Android開発を担当。Kotlin Multiplatformのエキスパート。" data-en="Responsible for iOS/Android development. Expert in Kotlin Multiplatform.">iOS/Android開発を担当。Kotlin Multiplatformのエキスパート。</p>
-                        <div class="member-skills">
-                            <span class="skill-tag">Swift</span>
-                            <span class="skill-tag">Kotlin</span>
-                            <span class="skill-tag">Flutter</span>
-                        </div>
-                        <div class="member-social">
-                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        </div>
                     </div>
                 </div>
 
@@ -725,16 +622,6 @@
                         <h3 class="member-name" data-ja="デザイナーB" data-en="Designer B">デザイナーB</h3>
                         <p class="member-role">UI/UX Designer</p>
                         <p class="member-bio" data-ja="ユーザー体験とビジュアルデザインを担当。" data-en="Responsible for user experience and visual design.">ユーザー体験とビジュアルデザインを担当。</p>
-                        <div class="member-skills">
-                            <span class="skill-tag">Figma</span>
-                            <span class="skill-tag">Adobe XD</span>
-                            <span class="skill-tag">Prototyping</span>
-                        </div>
-                        <div class="member-social">
-                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        </div>
                     </div>
                 </div>
 
@@ -746,15 +633,6 @@
                         <h3 class="member-name" data-ja="プロダクトマネージャーC" data-en="Product Manager C">プロダクトマネージャーC</h3>
                         <p class="member-role">Product Manager</p>
                         <p class="member-bio" data-ja="プロダクト戦略とチーム調整を担当。" data-en="Responsible for product strategy and team coordination.">プロダクト戦略とチーム調整を担当。</p>
-                        <div class="member-skills">
-                            <span class="skill-tag">Product Strategy</span>
-                            <span class="skill-tag">Analytics</span>
-                            <span class="skill-tag">Agile</span>
-                        </div>
-                        <div class="member-social">
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -833,28 +711,6 @@
                     <p class="step-description" data-ja="リリース後もユーザーの声を聞いて進化させる" data-en="Evolve by listening to users even after release">リリース後もユーザーの声を聞いて進化させる</p>
                 </div>
             </div>
-
-            <div class="tools-section">
-                <h3 class="tools-title" data-ja="使用ツール" data-en="Tools We Use">使用ツール</h3>
-                <div class="tools-grid">
-                    <div class="tool-item">
-                        <div class="tool-name">Slack</div>
-                        <div class="tool-use" data-ja="コミュニケーション" data-en="Communication">コミュニケーション</div>
-                    </div>
-                    <div class="tool-item">
-                        <div class="tool-name">Figma</div>
-                        <div class="tool-use" data-ja="デザイン" data-en="Design">デザイン</div>
-                    </div>
-                    <div class="tool-item">
-                        <div class="tool-name">GitHub</div>
-                        <div class="tool-use" data-ja="コード管理" data-en="Code Management">コード管理</div>
-                    </div>
-                    <div class="tool-item">
-                        <div class="tool-name">Linear</div>
-                        <div class="tool-use" data-ja="プロジェクト管理" data-en="Project Management">プロジェクト管理</div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -862,16 +718,7 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title" data-ja="お問い合わせ" data-en="Get in Touch">お問い合わせ</h2>
-            <p class="section-subtitle" data-ja="一緒にプロダクトを創りたい方、コラボレーションに興味がある方、お気軽にご連絡ください。" data-en="If you want to create products together or are interested in collaboration, feel free to contact us.">一緒にプロダクトを創りたい方、コラボレーションに興味がある方、お気軽にご連絡ください。</p>
-
             <div class="contact-email">team@teamzblitz.dev</div>
-
-            <div class="contact-social">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-            </div>
-
-            <div class="join-message" data-ja="新しいメンバーも募集中です 🚀" data-en="We're also looking for new members 🚀">新しいメンバーも募集中です 🚀</div>
         </div>
     </section>
 
