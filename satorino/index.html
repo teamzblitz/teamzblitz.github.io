@@ -90,12 +90,35 @@
             justify-content: center;
             background: linear-gradient(135deg, var(--bg-beige) 0%, var(--bg-light-beige) 100%);
             color: var(--text-brown);
-            text-align: center;
             padding: 80px 20px 60px;
         }
 
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            max-width: 350px;
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(139, 111, 71, 0.2);
+        }
+
         .hero-content {
-            max-width: 800px;
+            max-width: 600px;
+            text-align: left;
         }
 
         .logo {
@@ -368,6 +391,24 @@
                 padding: 4px 10px;
             }
 
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-image {
+                order: 1;
+            }
+
+            .hero-content {
+                order: 2;
+                text-align: center;
+            }
+
+            .hero-image img {
+                max-width: 280px;
+            }
+
             .logo {
                 font-size: 2.8rem;
             }
@@ -435,14 +476,19 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1 class="logo">Satorino</h1>
-            <p class="hero-tagline" data-ja="25分の集中が、小さな悟りになる" data-en="25 minutes of focus becomes a small enlightenment">25分の集中が、小さな悟りになる</p>
-            <p class="hero-description" data-ja="集中できたか、できなかったか。それに気づくことが「悟り」です。" data-en="Whether you could focus or not. Noticing that is 'enlightenment'.">
-                集中できたか、できなかったか。<br>
-                それに気づくことが「悟り」です。
-            </p>
-            <a href="#download" class="cta-button" data-ja="無料でダウンロード" data-en="Download for Free">無料でダウンロード</a>
+        <div class="hero-container">
+            <div class="hero-image">
+                <img src="/images/satorino-screen.png" alt="Satorino App Screenshot">
+            </div>
+            <div class="hero-content">
+                <h1 class="logo">Satorino</h1>
+                <p class="hero-tagline" data-ja="25分の集中が、小さな悟りになる" data-en="25 minutes of focus becomes a small enlightenment">25分の集中が、小さな悟りになる</p>
+                <p class="hero-description" data-ja="集中できたか、できなかったか。それに気づくことが「悟り」です。" data-en="Whether you could focus or not. Noticing that is 'enlightenment'.">
+                    集中できたか、できなかったか。<br>
+                    それに気づくことが「悟り」です。
+                </p>
+                <a href="#download" class="cta-button" data-ja="無料でダウンロード" data-en="Download for Free">無料でダウンロード</a>
+            </div>
         </div>
     </section>
 
