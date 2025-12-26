@@ -343,19 +343,28 @@
             gap: 10px;
         }
 
-        .store-label {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--primary-brown);
-            margin: 0;
-        }
-
-        .coming-soon {
-            font-size: 1.5rem;
+        .coming-soon-label {
+            font-size: 1.1rem;
             font-weight: 300;
             color: var(--secondary-brown);
             font-style: italic;
             margin: 0;
+        }
+
+        .app-store-badge {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .app-store-badge.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .app-store-img {
+            height: 80px;
+            width: auto;
         }
 
         .google-play-badge {
@@ -610,8 +619,10 @@
 
         <div class="store-buttons">
             <div class="store-item">
-                <p class="store-label" data-ja="App Store" data-en="App Store">App Store</p>
-                <p class="coming-soon" data-ja="Coming Soon..." data-en="Coming Soon...">Coming Soon...</p>
+                <a href="#" class="app-store-badge disabled">
+                    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/ja-jp" alt="Download on the App Store" class="app-store-img">
+                </a>
+                <p class="coming-soon-label" data-ja="Coming Soon..." data-en="Coming Soon...">Coming Soon...</p>
             </div>
             <div class="store-item">
                 <a href="#" class="google-play-badge">
